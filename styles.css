@@ -1,0 +1,247 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  margin: 0;
+  padding: 20px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.container {
+  max-width: 700px;
+  margin: 30px auto;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  transition: background 0.3s, color 0.3s;
+}
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+h1, h2 {
+  text-align: center;
+  color: #222;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+input {
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #cfd8dc;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+input:focus {
+  outline: none;
+  border-color: #4facfe;
+  box-shadow: 0 0 0 3px rgba(79, 172, 254, 0.2);
+}
+
+.botones {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.95;
+}
+
+.btn-agregar {
+  background: #28a745;
+}
+
+.btn-editar {
+  background: #f0ad4e;
+}
+
+.btn-darkmode {
+  background: #343a40;
+  width: 50px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+li {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.acciones {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.acciones button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.acciones .btn-item-editar {
+  background: #007bff;
+}
+
+.acciones .btn-item-eliminar {
+  background: #dc3545;
+}
+
+.loader {
+  margin: 15px auto;
+  text-align: center;
+  font-weight: bold;
+  color: #333;
+}
+
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #222;
+  color: white;
+  padding: 14px 18px;
+  border-radius: 10px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+.oculto {
+  display: none;
+}
+
+.modal:not(.oculto) {
+  display: flex;
+}
+
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.modal-botones {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.modal-botones button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.modal-botones button:first-child {
+  background: #dc3545;
+}
+
+.modal-botones button:last-child {
+  background: #6c757d;
+}
+
+body.dark .modal-content {
+  background: #1f2937;
+  color: white;
+}
+
+.toast.mostrar {
+  opacity: 1;
+}
+
+/* modo oscuro */
+body.dark {
+  background: linear-gradient(135deg, #1e1e2f, #121212);
+}
+
+body.dark .container {
+  background: #1f2937;
+  color: #f9fafb;
+}
+
+body.dark h1,
+body.dark h2 {
+  color: #f9fafb;
+}
+
+body.dark input {
+  background: #374151;
+  color: white;
+  border: 1px solid #4b5563;
+}
+
+body.dark li {
+  background: #374151;
+  color: white;
+}
+
+body.dark .loader {
+  color: white;
+}
+
+@media (max-width: 600px) {
+  .container {
+    margin: 10px;
+    padding: 18px;
+  }
+
+  .botones,
+  .acciones {
+    flex-direction: column;
+  }
+
+  .top-bar {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
